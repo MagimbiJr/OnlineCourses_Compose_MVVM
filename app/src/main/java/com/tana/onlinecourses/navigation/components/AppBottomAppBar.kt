@@ -1,5 +1,7 @@
 package com.tana.onlinecourses.navigation.components
 
+import android.util.Log
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.*
 import androidx.compose.material.SnackbarDefaults.backgroundColor
@@ -9,6 +11,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.tana.onlinecourses.home.data.randomUid
 import com.tana.onlinecourses.navigation.routes.BottomNavRoutes
 
 @Composable
@@ -17,7 +20,11 @@ fun AppBottomAppBar(
     bottomNavItems: List<BottomNavRoutes>,
     modifier: Modifier = Modifier
 ) {
-    BottomNavigation {
+    BottomNavigation(
+        backgroundColor = if (isSystemInDarkTheme()) MaterialTheme.colors.background else
+            MaterialTheme.colors.surface,
+        elevation = 16.dp
+    ) {
         val navBackStackEntry = navHostController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry.value?.destination?.route
 
