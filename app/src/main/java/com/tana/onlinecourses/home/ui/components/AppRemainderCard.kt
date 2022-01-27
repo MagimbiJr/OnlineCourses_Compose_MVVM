@@ -21,7 +21,6 @@ import com.tana.onlinecourses.R
 import com.tana.onlinecourses.ui.components.buttons.OutlineButton
 import com.tana.onlinecourses.ui.theme.EerieBlack
 import com.tana.onlinecourses.ui.theme.JazzberryJam
-import com.tana.onlinecourses.ui.theme.LightGray
 import com.tana.onlinecourses.ui.theme.Shapes
 
 @Composable
@@ -43,6 +42,7 @@ fun AppReminderCard(
     ) {
         Row(
             modifier = modifier
+                .background(color = Color.Transparent)
                 .fillMaxWidth()
                 .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically

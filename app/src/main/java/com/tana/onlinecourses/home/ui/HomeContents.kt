@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.tana.onlinecourses.home.ui.components.AppAnnouncementCard
 import com.tana.onlinecourses.home.ui.components.AppReminderCard
 
 @Composable
@@ -33,9 +34,11 @@ fun HomeContents(
             Column(
                 modifier = modifier
                     .fillMaxSize()
-                    .padding(12.dp)
+                    .padding(16.dp)
             ) {
                 AppReminderCard(modifier = modifier)
+                Spacer(modifier = modifier.height(16.dp))
+                AppAnnouncementCard(modifier = modifier)
             }
         }
     }

@@ -23,7 +23,7 @@ import com.tana.onlinecourses.ui.theme.Shapes
 fun OutlineButton(
     text: String,
     onClick: () -> Unit,
-    backgroundColor: Color = if (isSystemInDarkTheme()) EerieBlack else
+    backgroundColor: Color = if (isSystemInDarkTheme()) Color.Transparent else
         MaterialTheme.colors.surface,
     modifier: Modifier = Modifier
 ) {
