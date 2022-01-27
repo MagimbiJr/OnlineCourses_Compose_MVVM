@@ -35,7 +35,7 @@ val Typography = Typography(
         fontSize = 14.sp
     ),
     button = TextStyle(
-        fontFamily = UbuntuRegular,
+        fontFamily = UbuntuMedium,
         fontWeight = FontWeight.W500,
         fontSize = 14.sp
     ),
