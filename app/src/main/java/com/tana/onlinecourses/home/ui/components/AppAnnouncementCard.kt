@@ -53,7 +53,7 @@ fun AppAnnouncementCard(
                 Column() {
                     Card(
                         border = BorderStroke(width = 1.dp, color = Xanthic),
-                        backgroundColor = Color.Transparent,
+                        backgroundColor = if (isSystemInDarkTheme()) DarkPurple else MaterialTheme.colors.surface,
                     ) {
                         Text(
                             text = "Beta".toUpperCase(Locale.current),

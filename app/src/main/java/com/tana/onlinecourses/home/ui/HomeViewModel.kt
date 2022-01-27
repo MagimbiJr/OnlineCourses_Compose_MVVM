@@ -21,6 +21,10 @@ class HomeViewModel @Inject constructor(
             _uiState.value = _uiState.value.copy(
                 homePopularCourses = repository.getHomePopularCourses()
             )
+            _uiState.value = _uiState.value.copy(
+                categories = repository.getCategories()
+            )
         }
+
     }
 }
