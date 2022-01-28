@@ -15,7 +15,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
-import com.tana.onlinecourses.ui.theme.EerieBlack
 import com.tana.onlinecourses.ui.theme.JazzberryJam
 import com.tana.onlinecourses.ui.theme.Shapes
 

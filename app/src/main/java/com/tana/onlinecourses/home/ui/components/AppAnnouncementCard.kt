@@ -10,7 +10,6 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.style.TextAlign
@@ -18,8 +17,9 @@ import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 import com.tana.onlinecourses.R
 import com.tana.onlinecourses.ui.components.buttons.SecondaryButton
+import com.tana.onlinecourses.ui.theme.AcidGreen
 import com.tana.onlinecourses.ui.theme.CandyPink
-import com.tana.onlinecourses.ui.theme.DarkPurple
+import com.tana.onlinecourses.ui.theme.EerieBlackLight
 import com.tana.onlinecourses.ui.theme.Xanthic
 
 @Composable
@@ -29,8 +29,8 @@ fun AppAnnouncementCard(
     Card(
         modifier = modifier
             .fillMaxWidth(),
-        backgroundColor = if (isSystemInDarkTheme()) DarkPurple else MaterialTheme.colors.surface,
-        elevation = 12.dp
+        backgroundColor = if (isSystemInDarkTheme()) EerieBlackLight else MaterialTheme.colors.surface,
+        elevation = 12.dp,
     ) {
         Column(
             modifier = modifier
@@ -52,13 +52,15 @@ fun AppAnnouncementCard(
                 Spacer(modifier = modifier.width(12.dp))
                 Column() {
                     Card(
-                        border = BorderStroke(width = 1.dp, color = Xanthic),
-                        backgroundColor = if (isSystemInDarkTheme()) DarkPurple else MaterialTheme.colors.surface,
+                        border = BorderStroke(
+                            width = 1.dp,
+                            color = if (isSystemInDarkTheme()) Xanthic else AcidGreen),
+                        backgroundColor = if (isSystemInDarkTheme()) EerieBlackLight else MaterialTheme.colors.surface,
                     ) {
                         Text(
                             text = "Beta".toUpperCase(Locale.current),
                             style = MaterialTheme.typography.caption,
-                            color = Xanthic,
+                            color = if (isSystemInDarkTheme()) Xanthic else AcidGreen,
                             modifier = modifier.padding(horizontal = 12.dp, vertical = 4.dp)
                         )
                     }

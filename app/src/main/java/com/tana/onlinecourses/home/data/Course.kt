@@ -47,7 +47,7 @@ val popularCourses = listOf(
         courseDescription = "Mollit ad nulla laboris nulla anim. Culpa mollit do laboris est id eu." +
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
-        courseImage = R.drawable.android_app_arch
+        courseImage = R.drawable.java_fundamental
     ),
     Course(
         courseId = randomUid,
@@ -80,6 +80,6 @@ val popularCourses = listOf(
         courseDescription = "Mollit ad nulla laboris nulla anim. Culpa mollit do laboris est id eu." +
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
-        courseImage = R.drawable.android_app_arch
+        courseImage = R.drawable.kotlin_multiplatform
     )
 )
