@@ -11,7 +11,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.tana.onlinecourses.home.data.randomUid
 import com.tana.onlinecourses.navigation.routes.BottomNavRoutes
 
 @Composable
