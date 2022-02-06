@@ -8,7 +8,7 @@ import kotlinx.coroutines.delay
 
 class HomeRepositoryImpl : HomeRepository {
     override suspend fun getHomePopularCourses(): List<Course> {
-        delay(5000)
+        delay(3000)
         return popularCourses
     }
 

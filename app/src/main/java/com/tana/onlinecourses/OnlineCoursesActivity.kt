@@ -6,10 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
-import androidx.compose.material.primarySurface
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -29,6 +26,7 @@ class OnlineCoursesActivity : ComponentActivity() {
         setContent {
             val navHostController = rememberNavController()
             val systemUiController = rememberSystemUiController()
+            val scaffoldState = rememberScaffoldState()
 
 
             OnlineCoursesTheme {
@@ -37,7 +35,11 @@ class OnlineCoursesActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    AppNAvHost(navHostController = navHostController, systemUiController = systemUiController)
+                    AppNAvHost(
+                        navHostController = navHostController,
+                        systemUiController = systemUiController,
+                        scaffoldState = scaffoldState
+                    )
                 }
             }
         }

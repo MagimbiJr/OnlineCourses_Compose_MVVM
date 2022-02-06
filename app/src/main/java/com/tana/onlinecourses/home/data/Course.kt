@@ -13,11 +13,11 @@ data class Course(
     val courseImage: Int
 )
 
-val randomUid = UUID.randomUUID().toString()
+val randomId = UUID.randomUUID().toString()
 
 val popularCourses = listOf(
     Course(
-        courseId = randomUid,
+        courseId = randomId,
         courseTitle = "Jetpack Compose: Fundamental",
         courseAuthor = "Atanas Charle",
         coursePrice = "$140.00",
@@ -28,7 +28,7 @@ val popularCourses = listOf(
         courseImage = R.drawable.navigation_comp
     ),
     Course(
-        courseId = randomUid,
+        courseId = randomId,
         courseTitle = "Understanding MVVM pattern",
         courseAuthor = "Phillip Kalela",
         coursePrice = "$98.00",
@@ -39,7 +39,7 @@ val popularCourses = listOf(
         courseImage = R.drawable.android_app_arch
     ),
     Course(
-        courseId = randomUid,
+        courseId = randomId,
         courseTitle = "Android - Architect your App",
         courseAuthor = "Phillip Kalela",
         coursePrice = "$67.00",
@@ -50,7 +50,7 @@ val popularCourses = listOf(
         courseImage = R.drawable.java_fundamental
     ),
     Course(
-        courseId = randomUid,
+        courseId = randomId,
         courseTitle = "Kotlin flow: Big picture",
         courseAuthor = "Samwel Charles",
         coursePrice = "$80.00",
@@ -61,7 +61,7 @@ val popularCourses = listOf(
         courseImage = R.drawable.kotlin_flow
     ),
     Course(
-        courseId = randomUid,
+        courseId = randomId,
         courseTitle = "Introduction UI/UX",
         courseAuthor = "Jeremiah Charles",
         coursePrice = "$85.00",
@@ -72,9 +72,9 @@ val popularCourses = listOf(
         courseImage = R.drawable.ui_ux_fundamental
     ),
     Course(
-        courseId = randomUid,
+        courseId = randomId,
         courseTitle = "UI/UX The best way",
-        courseAuthor = "Jeremiah Keneth",
+        courseAuthor = "Jeremiah Charles",
         coursePrice = "$110.00",
         courseDuration = "1h 25 mins",
         courseDescription = "Mollit ad nulla laboris nulla anim. Culpa mollit do laboris est id eu." +

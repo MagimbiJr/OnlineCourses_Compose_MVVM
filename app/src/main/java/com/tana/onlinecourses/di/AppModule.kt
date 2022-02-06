@@ -1,5 +1,7 @@
 package com.tana.onlinecourses.di
 
+import com.tana.onlinecourses.detail_screen.data.CourseDetailRepositoryImpl
+import com.tana.onlinecourses.detail_screen.data.CourseDetailsRepository
 import com.tana.onlinecourses.home.data.repository.HomeRepository
 import com.tana.onlinecourses.home.data.repository.HomeRepositoryImpl
 import dagger.Module
@@ -16,5 +18,11 @@ object AppModule {
     @Singleton
     fun provideHomeRepository(): HomeRepository {
         return HomeRepositoryImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun provideCourseDetailsRepository(): CourseDetailsRepository {
+        return CourseDetailRepositoryImpl()
     }
 }
