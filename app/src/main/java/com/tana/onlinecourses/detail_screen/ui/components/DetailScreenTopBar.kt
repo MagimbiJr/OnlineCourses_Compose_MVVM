@@ -33,7 +33,7 @@ fun DetailScreenTopBar(
                     painter = painterResource(id = R.drawable.share_icon),
                     contentDescription = "Share course",
                     modifier = modifier
-                        .size(25.dp),
+                        .size(20.dp),
                     tint = MaterialTheme.colors.onBackground
                 )
             }

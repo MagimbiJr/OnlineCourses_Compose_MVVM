@@ -5,7 +5,6 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.ScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavArgument
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -13,8 +12,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.tana.onlinecourses.detail_screen.ui.CourseDetailScreen
+import com.tana.onlinecourses.downloads_screen.ui.DownloadsScreen
 import com.tana.onlinecourses.home.ui.HomeScreen
-import com.tana.onlinecourses.navigation.components.AppBottomAppBar
+import com.tana.onlinecourses.ui.components.app_bars.AppBottomBar
 import com.tana.onlinecourses.navigation.routes.BottomNavRoutes
 
 @Composable
@@ -31,7 +31,7 @@ fun AppNAvHost(
     )
     Scaffold(
         bottomBar = {
-            AppBottomAppBar(
+            AppBottomBar(
                 navHostController = navHostController,
                 bottomNavItems = bottomAppItems
             )
@@ -49,7 +49,12 @@ fun AppNAvHost(
                     systemUiController = systemUiController
                 )
             }
-            composable(BottomNavRoutes.Downloads.route) {}
+            composable(BottomNavRoutes.Downloads.route) {
+                DownloadsScreen(
+                    onNavigateToBrowse = { navHostController.navigate(it.route) },
+                    onNavigateBack = { navHostController.popBackStack() }
+                )
+            }
             composable(BottomNavRoutes.Browse.route) {}
             composable(BottomNavRoutes.Search.route) {}
             composable(
