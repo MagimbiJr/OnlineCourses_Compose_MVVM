@@ -1,4 +1,4 @@
-package com.tana.onlinecourses.home.ui.components
+package com.tana.onlinecourses.ui.components.app_bars
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -20,11 +20,12 @@ import com.tana.onlinecourses.ui.theme.EerieBlackLight
 import com.tana.onlinecourses.ui.theme.JazzberryJam
 
 @Composable
-fun HomeTopAppBar(
+fun AppTopBar(
+    title:String,
     modifier: Modifier = Modifier
 ) {
     TopAppBar(
-        title = { Text(text = "Home") },
+        title = { Text(text = title) },
         actions = {
             RoundedIconCard(modifier = modifier)
             IconButton(onClick = { /*TODO*/ }) {

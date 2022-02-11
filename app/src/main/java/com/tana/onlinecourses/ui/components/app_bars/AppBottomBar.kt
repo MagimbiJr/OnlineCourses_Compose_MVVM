@@ -1,10 +1,8 @@
-package com.tana.onlinecourses.navigation.components
+package com.tana.onlinecourses.ui.components.app_bars
 
-import android.util.Log
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.*
-import androidx.compose.material.SnackbarDefaults.backgroundColor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -14,7 +12,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import com.tana.onlinecourses.navigation.routes.BottomNavRoutes
 
 @Composable
-fun AppBottomAppBar(
+fun AppBottomBar(
     navHostController: NavHostController,
     bottomNavItems: List<BottomNavRoutes>,
     modifier: Modifier = Modifier

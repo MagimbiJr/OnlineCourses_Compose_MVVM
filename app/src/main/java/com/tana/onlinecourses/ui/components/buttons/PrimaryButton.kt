@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.intl.Locale
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 
@@ -30,7 +31,8 @@ fun PrimaryButton(
         Text(
             text = text.toUpperCase(Locale.current),
             modifier = modifier
-                .padding(horizontal = 16.dp, vertical = 4.dp)
+                .padding(horizontal = 16.dp, vertical = 4.dp),
+            textAlign = TextAlign.Center
         )
     }
 }
