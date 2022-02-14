@@ -4,20 +4,15 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.produceState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.tana.onlinecourses.home.data.Course
+import com.tana.onlinecourses.model.Course
 import com.tana.onlinecourses.ui.components.buttons.PrimaryButton
-import com.tana.onlinecourses.ui.components.buttons.SecondaryButton
-import com.tana.onlinecourses.utils.AppEvents
-import kotlinx.coroutines.flow.collect
 
 @Composable
 fun DetailsContent(
@@ -25,7 +20,6 @@ fun DetailsContent(
     viewModel: CourseDetailViewModel,
     modifier: Modifier
 ) {
-
 
     Box(
         modifier = modifier

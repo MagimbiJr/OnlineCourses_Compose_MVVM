@@ -1,5 +1,7 @@
 package com.tana.onlinecourses.di
 
+import com.tana.onlinecourses.brawse_courses.data.repository.BrowseRepository
+import com.tana.onlinecourses.brawse_courses.data.repository.BrowseRepositoryImpl
 import com.tana.onlinecourses.detail_screen.data.CourseDetailRepositoryImpl
 import com.tana.onlinecourses.detail_screen.data.CourseDetailsRepository
 import com.tana.onlinecourses.home.data.repository.HomeRepository
@@ -25,4 +27,11 @@ object AppModule {
     fun provideCourseDetailsRepository(): CourseDetailsRepository {
         return CourseDetailRepositoryImpl()
     }
+
+    @Provides
+    @Singleton
+    fun provideBrowseRepository(): BrowseRepository {
+        return BrowseRepositoryImpl()
+    }
+
 }

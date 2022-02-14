@@ -1,9 +1,10 @@
 package com.tana.onlinecourses.home.data.repository
 
-import com.tana.onlinecourses.home.data.Category
-import com.tana.onlinecourses.home.data.Course
+
 import com.tana.onlinecourses.home.data.categories
 import com.tana.onlinecourses.home.data.popularCourses
+import com.tana.onlinecourses.model.Category
+import com.tana.onlinecourses.model.Course
 import kotlinx.coroutines.delay
 
 class HomeRepositoryImpl : HomeRepository {

@@ -17,7 +17,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.tana.onlinecourses.home.data.Course
+import com.tana.onlinecourses.model.Course
 import com.tana.onlinecourses.ui.theme.JazzberryJam
 
 @Composable

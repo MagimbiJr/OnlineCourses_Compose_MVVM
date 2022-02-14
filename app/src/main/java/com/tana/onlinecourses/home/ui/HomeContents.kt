@@ -2,6 +2,7 @@ package com.tana.onlinecourses.home.ui
 
 import android.util.Log
 import android.widget.Toast
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
@@ -24,10 +25,10 @@ fun HomeContents(
     homeUiState: HomeUiState,
     onCourseClicked: (String) -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: HomeViewModel
+    viewModel: HomeViewModel,
+    scrollState: ScrollState
 ) {
 
-    val scrollState = rememberScrollState()
     Box(
         modifier = modifier
             .fillMaxSize(),
@@ -110,7 +111,6 @@ fun PopularCourses(
         )
     }
     Spacer(modifier = modifier.height(12.dp))
-    val context = LocalContext.current
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(19.dp)
     ) {

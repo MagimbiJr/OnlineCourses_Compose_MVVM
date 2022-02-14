@@ -1,12 +1,7 @@
 package com.tana.onlinecourses.home.data
 
 import com.tana.onlinecourses.R
-
-data class Category(
-    val name: String,
-    val description: String,
-    val categoryIcon: Int
-)
+import com.tana.onlinecourses.model.Category
 
 val categories = listOf(
     Category(

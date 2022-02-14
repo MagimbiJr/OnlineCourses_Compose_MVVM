@@ -3,7 +3,7 @@ package com.tana.onlinecourses.detail_screen.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tana.onlinecourses.detail_screen.data.CourseDetailsRepository
-import com.tana.onlinecourses.home.data.Course
+import com.tana.onlinecourses.model.Course
 import com.tana.onlinecourses.utils.AppEvents
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
