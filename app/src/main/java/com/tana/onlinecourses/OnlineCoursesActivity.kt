@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -27,6 +28,7 @@ class OnlineCoursesActivity : ComponentActivity() {
             val navHostController = rememberNavController()
             val systemUiController = rememberSystemUiController()
             val scaffoldState = rememberScaffoldState()
+            val scrollState = rememberScrollState()
 
 
             OnlineCoursesTheme {
@@ -38,7 +40,8 @@ class OnlineCoursesActivity : ComponentActivity() {
                     AppNAvHost(
                         navHostController = navHostController,
                         systemUiController = systemUiController,
-                        scaffoldState = scaffoldState
+                        scaffoldState = scaffoldState,
+                        scrollState = scrollState
                     )
                 }
             }

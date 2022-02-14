@@ -1,5 +1,6 @@
 package com.tana.onlinecourses.home.ui
 
+import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -18,6 +19,7 @@ fun HomeScreen(
     onNavigate: (AppEvents.Navigate) -> Unit,
     systemUiController: SystemUiController,
     scaffoldState: ScaffoldState,
+    scrollState: ScrollState,
     viewModel: HomeViewModel = hiltViewModel(),
 ) {
     val homeUiState = viewModel.uiState.collectAsState()
@@ -48,7 +50,8 @@ fun HomeScreen(
         HomeContents(
             homeUiState = homeUiState.value,
             onCourseClicked = viewModel::onCourseClicked,
-            viewModel = viewModel
+            viewModel = viewModel,
+            scrollState = scrollState
         )
     }
 }

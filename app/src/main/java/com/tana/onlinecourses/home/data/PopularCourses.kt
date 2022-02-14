@@ -1,17 +1,8 @@
 package com.tana.onlinecourses.home.data
 
 import com.tana.onlinecourses.R
+import com.tana.onlinecourses.model.Course
 import java.util.*
-
-data class Course(
-    val courseId: String,
-    val courseTitle: String,
-    val courseAuthor: String,
-    val coursePrice: String,
-    val courseDuration: String,
-    val courseDescription: String,
-    val courseImage: Int
-)
 
 val randomId = UUID.randomUUID().toString()
 
@@ -25,7 +16,8 @@ val popularCourses = listOf(
         courseDescription = "Mollit ad nulla laboris nulla anim. Culpa mollit do laboris est id eu." +
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
-        courseImage = R.drawable.navigation_comp
+        courseImage = R.drawable.navigation_comp,
+        releaseDate = "17 June 2021"
     ),
     Course(
         courseId = randomId,
@@ -36,7 +28,8 @@ val popularCourses = listOf(
         courseDescription = "Mollit ad nulla laboris nulla anim. Culpa mollit do laboris est id eu." +
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
-        courseImage = R.drawable.android_app_arch
+        courseImage = R.drawable.android_app_arch,
+        releaseDate = "10 Sep 2020"
     ),
     Course(
         courseId = randomId,
@@ -47,7 +40,8 @@ val popularCourses = listOf(
         courseDescription = "Mollit ad nulla laboris nulla anim. Culpa mollit do laboris est id eu." +
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
-        courseImage = R.drawable.java_fundamental
+        courseImage = R.drawable.java_fundamental,
+        releaseDate = "15 May 2091"
     ),
     Course(
         courseId = randomId,
@@ -58,7 +52,8 @@ val popularCourses = listOf(
         courseDescription = "Mollit ad nulla laboris nulla anim. Culpa mollit do laboris est id eu." +
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
-        courseImage = R.drawable.kotlin_flow
+        courseImage = R.drawable.kotlin_flow,
+        releaseDate = "17 Mar 2021"
     ),
     Course(
         courseId = randomId,
@@ -69,7 +64,8 @@ val popularCourses = listOf(
         courseDescription = "Mollit ad nulla laboris nulla anim. Culpa mollit do laboris est id eu." +
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
-        courseImage = R.drawable.ui_ux_fundamental
+        courseImage = R.drawable.ui_ux_fundamental,
+        releaseDate = "07 June 2018"
     ),
     Course(
         courseId = randomId,
@@ -80,6 +76,7 @@ val popularCourses = listOf(
         courseDescription = "Mollit ad nulla laboris nulla anim. Culpa mollit do laboris est id eu." +
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
-        courseImage = R.drawable.kotlin_multiplatform
+        courseImage = R.drawable.kotlin_multiplatform,
+        releaseDate = "17 Dec 2021"
     )
 )

@@ -1,7 +1,7 @@
 package com.tana.onlinecourses.detail_screen.data
 
-import com.tana.onlinecourses.home.data.Course
 import com.tana.onlinecourses.home.data.popularCourses
+import com.tana.onlinecourses.model.Course
 import kotlinx.coroutines.delay
 
 class CourseDetailRepositoryImpl : CourseDetailsRepository {
@@ -21,7 +21,8 @@ class CourseDetailRepositoryImpl : CourseDetailsRepository {
                 coursePrice = mappedCourse.coursePrice,
                 courseDuration = mappedCourse.courseDuration,
                 courseDescription = mappedCourse.courseDescription,
-                courseImage = mappedCourse.courseImage
+                courseImage = mappedCourse.courseImage,
+                releaseDate = mappedCourse.releaseDate
             )
         }
         return course
