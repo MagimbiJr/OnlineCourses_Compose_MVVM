@@ -1,4 +1,4 @@
-package com.tana.onlinecourses.brawse_courses.ui
+package com.tana.onlinecourses.brawse_courses.main.ui
 
 import androidx.compose.foundation.ScrollState
 import androidx.compose.foundation.background
@@ -17,8 +17,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.tana.onlinecourses.R
-import com.tana.onlinecourses.brawse_courses.ui.components.AreaOfInterests
-import com.tana.onlinecourses.brawse_courses.ui.components.BrowseCard
+import com.tana.onlinecourses.brawse_courses.main.ui.components.AreaOfInterests
+import com.tana.onlinecourses.brawse_courses.main.ui.components.BrowseCard
 import com.tana.onlinecourses.ui.theme.JazzberryJam
 
 @Composable

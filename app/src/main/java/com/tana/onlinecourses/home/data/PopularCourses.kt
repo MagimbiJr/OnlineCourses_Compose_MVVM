@@ -17,7 +17,8 @@ val popularCourses = listOf(
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
         courseImage = R.drawable.navigation_comp,
-        releaseDate = "17 June 2021"
+        releaseDate = "17 June 2021",
+        entryLevel = "Beginner"
     ),
     Course(
         courseId = randomId,
@@ -29,7 +30,8 @@ val popularCourses = listOf(
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
         courseImage = R.drawable.android_app_arch,
-        releaseDate = "10 Sep 2020"
+        releaseDate = "10 Sep 2020",
+        entryLevel = "Beginner"
     ),
     Course(
         courseId = randomId,
@@ -41,7 +43,8 @@ val popularCourses = listOf(
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
         courseImage = R.drawable.java_fundamental,
-        releaseDate = "15 May 2091"
+        releaseDate = "15 May 2091",
+        entryLevel = "Beginner"
     ),
     Course(
         courseId = randomId,
@@ -53,7 +56,8 @@ val popularCourses = listOf(
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
         courseImage = R.drawable.kotlin_flow,
-        releaseDate = "17 Mar 2021"
+        releaseDate = "17 Mar 2021",
+        entryLevel = "Beginner"
     ),
     Course(
         courseId = randomId,
@@ -65,7 +69,8 @@ val popularCourses = listOf(
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
         courseImage = R.drawable.ui_ux_fundamental,
-        releaseDate = "07 June 2018"
+        releaseDate = "07 June 2018",
+        entryLevel = "Beginner"
     ),
     Course(
         courseId = randomId,
@@ -77,6 +82,7 @@ val popularCourses = listOf(
                 " Est enim labore et ad Lorem. Amet culpa labore ut tempor id occaecat mollit do ipsum" +
                 " commodo. Est pariatur culpa ut cupidatat nostrud do deserunt aliquip amet ",
         courseImage = R.drawable.kotlin_multiplatform,
-        releaseDate = "17 Dec 2021"
+        releaseDate = "17 Dec 2021",
+        entryLevel = "Beginner"
     )
 )

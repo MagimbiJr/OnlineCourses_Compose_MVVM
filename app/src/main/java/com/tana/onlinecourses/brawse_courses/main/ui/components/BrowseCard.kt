@@ -1,4 +1,4 @@
-package com.tana.onlinecourses.brawse_courses.ui.components
+package com.tana.onlinecourses.brawse_courses.main.ui.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

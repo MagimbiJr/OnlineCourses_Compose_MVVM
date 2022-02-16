@@ -1,4 +1,4 @@
-package com.tana.onlinecourses.brawse_courses.ui
+package com.tana.onlinecourses.brawse_courses.main.ui
 
 import androidx.compose.foundation.ScrollState
 import androidx.compose.material.Scaffold

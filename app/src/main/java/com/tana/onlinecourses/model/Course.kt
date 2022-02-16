@@ -9,5 +9,6 @@ data class Course(
     val courseDuration: String,
     val courseDescription: String,
     val courseImage: Int,
-    val releaseDate: String
+    val releaseDate: String,
+    val entryLevel: String
 )

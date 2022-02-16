@@ -22,7 +22,8 @@ class CourseDetailRepositoryImpl : CourseDetailsRepository {
                 courseDuration = mappedCourse.courseDuration,
                 courseDescription = mappedCourse.courseDescription,
                 courseImage = mappedCourse.courseImage,
-                releaseDate = mappedCourse.releaseDate
+                releaseDate = mappedCourse.releaseDate,
+                entryLevel = mappedCourse.entryLevel
             )
         }
         return course

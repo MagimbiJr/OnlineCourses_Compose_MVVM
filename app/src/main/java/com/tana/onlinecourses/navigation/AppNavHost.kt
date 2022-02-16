@@ -13,7 +13,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.google.accompanist.systemuicontroller.SystemUiController
-import com.tana.onlinecourses.brawse_courses.ui.BrowseScreen
+import com.tana.onlinecourses.brawse_courses.main.ui.BrowseScreen
+import com.tana.onlinecourses.brawse_courses.new_releases.ui.NewReleaseScreen
 import com.tana.onlinecourses.detail_screen.ui.CourseDetailScreen
 import com.tana.onlinecourses.downloads_screen.ui.DownloadsScreen
 import com.tana.onlinecourses.home.ui.HomeScreen
@@ -82,7 +83,11 @@ fun AppNAvHost(
                 )
             }
             composable("new_releases") {
-                Text(text = "New releases")
+                NewReleaseScreen(
+                    onNavigate = { navHostController.navigate(it.route) },
+                    onPopBack = { navHostController.popBackStack() },
+                    systemUiController = systemUiController
+                )
             }
             composable("recommended") {
                 Text(text = "Recommended")
