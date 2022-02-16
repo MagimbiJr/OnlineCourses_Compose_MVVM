@@ -1,8 +1,8 @@
-package com.tana.onlinecourses.brawse_courses.ui
+package com.tana.onlinecourses.brawse_courses.main.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tana.onlinecourses.brawse_courses.data.repository.BrowseRepository
+import com.tana.onlinecourses.brawse_courses.main.data.repository.BrowseRepository
 import com.tana.onlinecourses.utils.AppEvents
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel

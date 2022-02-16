@@ -1,6 +1,6 @@
-package com.tana.onlinecourses.brawse_courses.data.repository
+package com.tana.onlinecourses.brawse_courses.main.data.repository
 
-import com.tana.onlinecourses.brawse_courses.data.skills
+import com.tana.onlinecourses.brawse_courses.main.data.skills
 import com.tana.onlinecourses.model.Skill
 import kotlinx.coroutines.delay
 

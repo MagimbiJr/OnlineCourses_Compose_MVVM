@@ -1,4 +1,4 @@
-package com.tana.onlinecourses.brawse_courses.data
+package com.tana.onlinecourses.brawse_courses.main.data
 
 import com.tana.onlinecourses.model.Skill
 

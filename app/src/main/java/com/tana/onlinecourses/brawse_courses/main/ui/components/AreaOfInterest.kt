@@ -1,8 +1,9 @@
-package com.tana.onlinecourses.brawse_courses.ui.components
+package com.tana.onlinecourses.brawse_courses.main.ui.components
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -30,7 +31,8 @@ fun AreaOfInterests(
     ) {
         item {
             Card(
-                backgroundColor = MaterialTheme.colors.background
+                backgroundColor = MaterialTheme.colors.background,
+                shape = RoundedCornerShape(0.dp)
             ) {
                 Column() {
                     InterestItem(item = "conferences", onItemClicked = onConferenceClicked, modifier = modifier)
@@ -41,7 +43,8 @@ fun AreaOfInterests(
         }
         item {
             Card(
-                backgroundColor = MaterialTheme.colors.background
+                backgroundColor = MaterialTheme.colors.background,
+                shape = RoundedCornerShape(0.dp)
             ) {
                 Column() {
                     InterestItem(item = "software \n development", onItemClicked = onSoftwareDevClicked, modifier = modifier)
@@ -52,7 +55,8 @@ fun AreaOfInterests(
         }
         item {
             Card(
-                backgroundColor = MaterialTheme.colors.background
+                backgroundColor = MaterialTheme.colors.background,
+                shape = RoundedCornerShape(0.dp)
             ) {
                 Column() {
                     InterestItem(item = "Business \n professional", onItemClicked = onBusinessProfClicked, modifier = modifier)
