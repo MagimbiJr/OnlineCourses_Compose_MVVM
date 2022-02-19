@@ -1,4 +1,4 @@
-package com.tana.onlinecourses.brawse_courses.new_releases.ui
+package com.tana.onlinecourses.brawse_courses.recommended.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -15,12 +15,13 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 import com.tana.onlinecourses.brawse_courses.components.NewCourseItem
+import com.tana.onlinecourses.brawse_courses.new_releases.ui.NewReleaseUiState
 
 @Composable
-fun NewReleaseContent(
+fun RecommendedContents(
+    uiState: RecommendedUiState,
     onCourseClicked: (String) -> Unit,
-    uiState: NewReleaseUiState,
-    modifier: Modifier = Modifier,
+    modifier: Modifier
 ) {
     Box(
         modifier = modifier
@@ -34,7 +35,7 @@ fun NewReleaseContent(
                 modifier = modifier
                     .fillMaxSize()
             ) {
-                NewReleases(
+                Recommended(
                     uiState = uiState,
                     onCourseClicked = onCourseClicked,
                     modifier = modifier
@@ -45,12 +46,12 @@ fun NewReleaseContent(
 }
 
 @Composable
-fun NewReleases(
-    uiState: NewReleaseUiState,
+fun Recommended(
+    uiState: RecommendedUiState,
     onCourseClicked: (String) -> Unit,
     modifier: Modifier
 ) {
-    val newReleases = uiState.newReleases
+    val newReleases = uiState.recommendedCourses
 
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(12.dp)
@@ -58,7 +59,7 @@ fun NewReleases(
         item {
             Spacer(modifier = modifier.height(32.dp))
             Text(
-                text = "new \n release".toUpperCase(Locale.current),
+                text = "recommended \n for you".toUpperCase(Locale.current),
                 style = MaterialTheme.typography.subtitle1,
                 fontWeight = FontWeight.Bold,
                 modifier = modifier

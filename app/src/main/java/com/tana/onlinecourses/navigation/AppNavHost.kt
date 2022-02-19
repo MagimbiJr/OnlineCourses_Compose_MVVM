@@ -15,6 +15,7 @@ import androidx.navigation.navArgument
 import com.google.accompanist.systemuicontroller.SystemUiController
 import com.tana.onlinecourses.brawse_courses.main.ui.BrowseScreen
 import com.tana.onlinecourses.brawse_courses.new_releases.ui.NewReleaseScreen
+import com.tana.onlinecourses.brawse_courses.recommended.ui.RecommendedScreen
 import com.tana.onlinecourses.detail_screen.ui.CourseDetailScreen
 import com.tana.onlinecourses.downloads_screen.ui.DownloadsScreen
 import com.tana.onlinecourses.home.ui.HomeScreen
@@ -90,7 +91,10 @@ fun AppNAvHost(
                 )
             }
             composable("recommended") {
-                Text(text = "Recommended")
+                RecommendedScreen(
+                    onNavigate = { navHostController.navigate(it.route) },
+                    onPopBack = { navHostController.popBackStack() }
+                )
             }
         }
     }
