@@ -17,12 +17,12 @@ The feature plan is to create backend for all the data needed by the app.
 
 ### Dark mode
 
-<img src="" height="380" />
+<img src="https://github.com/MagimbiJr/OnlineCourses_Compose_MVVM/blob/master/online_courses_dark.gif" height="380" />
 
-<img src="" height="380" />
+<img src="https://github.com/MagimbiJr/OnlineCourses_Compose_MVVM/blob/master/online_courses_details_dark.gif" height="380" />
 
 ### Light mode
 
-<img src="" height="380" />
+<img src="https://github.com/MagimbiJr/OnlineCourses_Compose_MVVM/blob/master/online_courses_light.gif" height="380" />
 
-<img src="" height="380" />
+<img src="https://github.com/MagimbiJr/OnlineCourses_Compose_MVVM/blob/master/online_courses_details_light.gif" height="380" />
