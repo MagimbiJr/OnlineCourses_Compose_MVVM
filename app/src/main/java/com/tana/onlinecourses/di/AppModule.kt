@@ -4,6 +4,8 @@ import com.tana.onlinecourses.brawse_courses.main.data.repository.BrowseReposito
 import com.tana.onlinecourses.brawse_courses.main.data.repository.BrowseRepositoryImpl
 import com.tana.onlinecourses.brawse_courses.new_releases.data.repository.NewReleaseCoursesImpl
 import com.tana.onlinecourses.brawse_courses.new_releases.data.repository.NewReleaseRepository
+import com.tana.onlinecourses.brawse_courses.recommended.data.repository.RecommendedRepository
+import com.tana.onlinecourses.brawse_courses.recommended.data.repository.RecommendedRepositoryImpl
 import com.tana.onlinecourses.detail_screen.data.CourseDetailRepositoryImpl
 import com.tana.onlinecourses.detail_screen.data.CourseDetailsRepository
 import com.tana.onlinecourses.home.data.repository.HomeRepository
@@ -40,6 +42,12 @@ object AppModule {
     @Singleton
     fun provideNewReleaseCourses(): NewReleaseRepository {
         return NewReleaseCoursesImpl()
+    }
+
+    @Provides
+    @Singleton
+    fun provideRecommendedRepository(): RecommendedRepository {
+        return RecommendedRepositoryImpl()
     }
 
 }

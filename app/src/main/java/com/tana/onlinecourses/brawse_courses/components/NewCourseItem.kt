@@ -1,4 +1,4 @@
-package com.tana.onlinecourses.brawse_courses.new_releases.ui.components
+package com.tana.onlinecourses.brawse_courses.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
