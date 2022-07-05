@@ -9,11 +9,8 @@ class CourseDetailRepositoryImpl : CourseDetailsRepository {
     override suspend fun courseDetails(id: String): Course? {
         var course: Course? = null
         delay(2000)
-        var courseId = ""
         popularCourses.map { mappedCourse ->
-//            if (id == mappedCourse.courseId) {
-//                courseId = id
-//            }
+
             course = Course(
                 courseId = id,
                 courseTitle = mappedCourse.courseTitle,
