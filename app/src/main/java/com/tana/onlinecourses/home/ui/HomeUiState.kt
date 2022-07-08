@@ -5,7 +5,8 @@ import com.tana.onlinecourses.model.Course
 
 data class HomeUiState(
     val homePopularCourses: List<Course> = emptyList(),
-    val categories: List<Category> = emptyList()
+    val categories: List<Category> = emptyList(),
+    val errorMessage: String = ""
 ) {
     val loading
         get() = homePopularCourses.isEmpty() || categories.isEmpty()

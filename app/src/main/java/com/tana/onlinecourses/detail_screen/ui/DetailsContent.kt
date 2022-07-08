@@ -16,80 +16,66 @@ import com.tana.onlinecourses.ui.components.buttons.PrimaryButton
 
 @Composable
 fun DetailsContent(
-    id: String,
-    viewModel: CourseDetailViewModel,
+    uiState: CourseDetailUiState,
+    onBuyCourseClick: () -> Unit,
     modifier: Modifier
 ) {
 
-    Box(
-        modifier = modifier
-            .fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-
-        val course = produceState<Course?>(initialValue = null) {
-            value = viewModel.courseDetails(id = id)
-        }.value
-
-        if (course == null) {
-            CircularProgressIndicator()
-        } else {
-
+    uiState.course?.let { course ->
+        Column(
+            modifier = modifier
+                .fillMaxSize()
+        ) {
+            Image(
+                painter = painterResource(id = course.courseImage),
+                contentDescription = "",
+                modifier = modifier
+                    .fillMaxWidth()
+                    .height(210.dp),
+                contentScale = ContentScale.Crop
+            )
             Column(
                 modifier = modifier
                     .fillMaxSize()
+                    .padding(16.dp)
             ) {
-                Image(
-                    painter = painterResource(id = course.courseImage),
-                    contentDescription = "",
-                    modifier = modifier
-                        .fillMaxWidth()
-                        .height(210.dp),
-                    contentScale = ContentScale.Crop
-                )
                 Column(
                     modifier = modifier
-                        .fillMaxSize()
-                        .padding(16.dp)
+                        .weight(1f)
                 ) {
-                    Column(
-                        modifier = modifier
-                            .weight(1f)
-                    ) {
+                    Text(
+                        text = course.courseTitle,
+                        style = MaterialTheme.typography.h6
+                    )
+                    Spacer(modifier = modifier.height(12.dp))
+                    Row() {
+                        Text(text = "By")
+                        Spacer(modifier = modifier.width(4.dp))
                         Text(
-                            text = course.courseTitle,
-                            style = MaterialTheme.typography.h6
-                        )
-                        Spacer(modifier = modifier.height(12.dp))
-                        Row() {
-                            Text(text = "By")
-                            Spacer(modifier = modifier.width(4.dp))
-                            Text(
-                                text = course.courseAuthor,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
-                        Spacer(modifier = modifier.height(16.dp))
-                        Participants(modifier = modifier)
-                        Spacer(modifier = modifier.height(12.dp))
-                        CourseDescription(course = course, modifier = modifier)
-
-                    }
-                    Row(
-                        modifier = modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Text(
-                            text = course.coursePrice,
-                            //style = MaterialTheme.typography.subtitle1,
+                            text = course.courseAuthor,
                             fontWeight = FontWeight.Bold
                         )
-                        PrimaryButton(
-                            text = "Buy this course",
-                            onClick = { /*TODO*/ }
-                        )
                     }
+                    Spacer(modifier = modifier.height(16.dp))
+                    Participants(modifier = modifier)
+                    Spacer(modifier = modifier.height(12.dp))
+                    CourseDescription(course = course, modifier = modifier)
+
+                }
+                Row(
+                    modifier = modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = course.coursePrice,
+                        //style = MaterialTheme.typography.subtitle1,
+                        fontWeight = FontWeight.Bold
+                    )
+                    PrimaryButton(
+                        text = "Buy this course",
+                        onClick = onBuyCourseClick
+                    )
                 }
             }
         }

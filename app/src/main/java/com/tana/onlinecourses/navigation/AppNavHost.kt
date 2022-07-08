@@ -70,15 +70,8 @@ fun AppNAvHost(
                 )
             }
             composable(BottomNavRoutes.Search.route) {}
-            composable(
-                route = "course_details_screen/{id}",
-                arguments = listOf(
-                    navArgument(name = "id") { type = NavType.StringType }
-                )
-            ) { navBackStackEntry ->
-                val id = navBackStackEntry.arguments?.getString("id")!!
+            composable(route = "course_details_screen/{id}") {
                 CourseDetailScreen(
-                    id = id,
                     onNavigateBack = { navHostController.popBackStack() },
                     scaffoldState = scaffoldState
                 )

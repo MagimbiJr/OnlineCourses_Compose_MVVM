@@ -1,5 +1,6 @@
 package com.tana.onlinecourses.detail_screen.data
 
+import android.util.Log
 import com.tana.onlinecourses.home.data.popularCourses
 import com.tana.onlinecourses.model.Course
 import com.tana.onlinecourses.utils.Resource
@@ -13,9 +14,10 @@ class CourseDetailRepositoryImpl : CourseDetailsRepository {
     override fun courseDetails(id: String): Flow<Resource<Course>> = flow {
 
         try {
-            delay(2000)
+            delay(1500)
             emit(Resource.Loading())
             val course = popularCourses.find { it.courseId == id }
+            Log.d("TAG", "courseDetails: $course")
             if (course != null) {
                 emit(Resource.Success(data = course))
             }
@@ -24,6 +26,7 @@ class CourseDetailRepositoryImpl : CourseDetailsRepository {
         } catch (e: IOException) {
             emit(Resource.Failure(message = e.localizedMessage ?: "Something came up"))
         }
+
     }
 
 }

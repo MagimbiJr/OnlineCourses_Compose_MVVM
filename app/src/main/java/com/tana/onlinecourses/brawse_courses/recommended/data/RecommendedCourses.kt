@@ -1,12 +1,10 @@
 package com.tana.onlinecourses.brawse_courses.recommended.data
 
 import com.tana.onlinecourses.R
-import com.tana.onlinecourses.brawse_courses.new_releases.data.randomId
 import com.tana.onlinecourses.model.Course
 
 val recommendedCourses = mutableListOf(
     Course(
-        courseId = randomId,
         courseTitle = "Jetpack Compose: Fundamental",
         courseAuthor = "Atanas Charle",
         coursePrice = "$140.00",
@@ -19,7 +17,6 @@ val recommendedCourses = mutableListOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "Jetpack Compose: Thinking in compose",
         courseAuthor = "Atanas Charle",
         coursePrice = "$110.00",

@@ -18,13 +18,13 @@ import com.tana.onlinecourses.model.Course
 @Composable
 fun NewCourseItem(
     course: Course,
-    onCourseClicked: (String) -> Unit,
+    onCourseClicked: (Course) -> Unit,
     modifier: Modifier
 ) {
     Row(
         modifier = modifier
             .fillMaxWidth()
-            .clickable { onCourseClicked(course.courseId) }
+            .clickable { onCourseClicked(course) }
     ) {
         Spacer(modifier = modifier.width(12.dp))
         Image(

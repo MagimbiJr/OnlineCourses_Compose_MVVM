@@ -4,7 +4,6 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tana.onlinecourses.detail_screen.data.CourseDetailsRepository
-import com.tana.onlinecourses.model.Course
 import com.tana.onlinecourses.utils.AppEvents
 import com.tana.onlinecourses.utils.Constants
 import com.tana.onlinecourses.utils.Resource
@@ -12,7 +11,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -29,8 +27,8 @@ class CourseDetailViewModel @Inject constructor(
 
 
     init {
-        savedStateHandle.get<String>(Constants.PARAM_COURSE_ID)?.let { courseId ->
-            courseDetails(id = courseId)
+        savedStateHandle.get<String>(Constants.PARAM_COURSE_ID)?.let { id ->
+            courseDetails(id = id)
         }
     }
 

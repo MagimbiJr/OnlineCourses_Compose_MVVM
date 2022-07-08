@@ -16,11 +16,12 @@ import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 import com.tana.onlinecourses.brawse_courses.components.NewCourseItem
 import com.tana.onlinecourses.brawse_courses.new_releases.ui.NewReleaseUiState
+import com.tana.onlinecourses.model.Course
 
 @Composable
 fun RecommendedContents(
     uiState: RecommendedUiState,
-    onCourseClicked: (String) -> Unit,
+    onCourseClicked: (Course) -> Unit,
     modifier: Modifier
 ) {
     Box(
@@ -48,7 +49,7 @@ fun RecommendedContents(
 @Composable
 fun Recommended(
     uiState: RecommendedUiState,
-    onCourseClicked: (String) -> Unit,
+    onCourseClicked: (Course) -> Unit,
     modifier: Modifier
 ) {
     val newReleases = uiState.recommendedCourses

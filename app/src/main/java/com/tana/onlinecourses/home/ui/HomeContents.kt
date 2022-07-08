@@ -19,11 +19,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import com.tana.onlinecourses.home.ui.components.*
+import com.tana.onlinecourses.model.Course
 
 @Composable
 fun HomeContents(
     homeUiState: HomeUiState,
-    onCourseClicked: (String) -> Unit,
+    onCourseClicked: (Course) -> Unit,
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel,
     scrollState: ScrollState
@@ -89,7 +90,7 @@ fun Categories(
 @Composable
 fun PopularCourses(
     homeUiState: HomeUiState,
-    onCourseClicked: (String) -> Unit,
+    onCourseClicked: (Course) -> Unit,
     modifier: Modifier,
     viewModel: HomeViewModel
 ) {
@@ -114,10 +115,7 @@ fun PopularCourses(
     LazyRow(
         horizontalArrangement = Arrangement.spacedBy(19.dp)
     ) {
-        itemsIndexed(popularCourses) { index, course ->
-            Log.d(TAG, "PopularCourses: $index")
-            viewModel.clickedIndex = index
-            Log.d(TAG, "PopularCourses: view model index is ${viewModel.clickedIndex}")
+        items(popularCourses) { course ->
             PopularCard(onCourseClicked = onCourseClicked, course = course, modifier = modifier)
         }
     }

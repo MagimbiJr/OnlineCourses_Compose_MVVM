@@ -4,11 +4,10 @@ import com.tana.onlinecourses.R
 import com.tana.onlinecourses.model.Course
 import java.util.*
 
-val randomId = UUID.randomUUID().toString()
+val courseId = UUID.randomUUID().toString()
 
 val newReleases = listOf(
     Course(
-        courseId = randomId,
         courseTitle = "Jetpack Compose: Fundamental",
         courseAuthor = "Atanas Charle",
         coursePrice = "$140.00",
@@ -21,7 +20,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "Understanding MVVM pattern",
         courseAuthor = "Phillip Kalela",
         coursePrice = "$98.00",
@@ -34,7 +32,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "Android - Architect your App",
         courseAuthor = "Phillip Kalela",
         coursePrice = "$67.00",
@@ -47,7 +44,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "Kotlin flow: Big picture",
         courseAuthor = "Samwel Charles",
         coursePrice = "$80.00",
@@ -60,7 +56,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "Introduction UI/UX",
         courseAuthor = "Jeremiah Charles",
         coursePrice = "$85.00",
@@ -73,7 +68,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "UI/UX The best way",
         courseAuthor = "Jeremiah Charles",
         coursePrice = "$110.00",
@@ -86,7 +80,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "Jetpack Compose: Thinking in compose",
         courseAuthor = "Atanas Charle",
         coursePrice = "$110.00",
@@ -99,7 +92,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "MVVM or MVC: Guide to decide which to use",
         courseAuthor = "Phillip Kalela",
         coursePrice = "$98.00",
@@ -112,7 +104,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "Hands on Coroutine",
         courseAuthor = "Yeuni Gilbert",
         coursePrice = "$67.00",
@@ -125,7 +116,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "Kotlin Collection",
         courseAuthor = "Samwel Charles",
         coursePrice = "$80.00",
@@ -138,7 +128,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "UI/UX: How to design",
         courseAuthor = "Jeremiah Charles",
         coursePrice = "$85.00",
@@ -151,7 +140,6 @@ val newReleases = listOf(
         entryLevel = "Beginner"
     ),
     Course(
-        courseId = randomId,
         courseTitle = "UI/UX: Introduction to FIGMA",
         courseAuthor = "Jeremiah Charles",
         coursePrice = "$110.00",

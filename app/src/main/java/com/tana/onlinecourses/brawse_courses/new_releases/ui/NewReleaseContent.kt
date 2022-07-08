@@ -15,39 +15,30 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.toUpperCase
 import androidx.compose.ui.unit.dp
 import com.tana.onlinecourses.brawse_courses.components.NewCourseItem
+import com.tana.onlinecourses.model.Course
 
 @Composable
 fun NewReleaseContent(
-    onCourseClicked: (String) -> Unit,
+    onCourseClicked: (Course) -> Unit,
     uiState: NewReleaseUiState,
     modifier: Modifier = Modifier,
 ) {
-    Box(
+    Column(
         modifier = modifier
-            .fillMaxSize(),
-        contentAlignment = Alignment.Center
+            .fillMaxSize()
     ) {
-        if (uiState.loading) {
-            CircularProgressIndicator()
-        } else {
-            Column(
-                modifier = modifier
-                    .fillMaxSize()
-            ) {
-                NewReleases(
-                    uiState = uiState,
-                    onCourseClicked = onCourseClicked,
-                    modifier = modifier
-                )
-            }
-        }
+        NewReleases(
+            uiState = uiState,
+            onCourseClicked = onCourseClicked,
+            modifier = modifier
+        )
     }
 }
 
 @Composable
 fun NewReleases(
     uiState: NewReleaseUiState,
-    onCourseClicked: (String) -> Unit,
+    onCourseClicked: (Course) -> Unit,
     modifier: Modifier
 ) {
     val newReleases = uiState.newReleases

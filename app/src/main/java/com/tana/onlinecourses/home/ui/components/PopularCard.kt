@@ -23,7 +23,7 @@ import com.tana.onlinecourses.ui.theme.JazzberryJam
 @Composable
 fun PopularCard(
     course: Course,
-    onCourseClicked: (String) -> Unit,
+    onCourseClicked: (Course) -> Unit,
     modifier: Modifier
 ) {
     Card(
@@ -31,7 +31,7 @@ fun PopularCard(
             .height(220.dp)
             .width(180.dp)
             .clip(RoundedCornerShape(4.dp))
-            .clickable { onCourseClicked(course.courseId) },
+            .clickable { onCourseClicked(course) },
         shape = RoundedCornerShape(4.dp)
     ) {
         Column(
