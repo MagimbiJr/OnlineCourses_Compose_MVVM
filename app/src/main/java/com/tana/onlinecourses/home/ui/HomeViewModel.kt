@@ -1,15 +1,12 @@
 package com.tana.onlinecourses.home.ui
 
-import android.app.Application
-import android.content.Context
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.tana.onlinecourses.OnlineCoursesApp
 import com.tana.onlinecourses.home.data.repository.HomeRepository
+import com.tana.onlinecourses.model.Course
 import com.tana.onlinecourses.utils.AppEvents
+import com.tana.onlinecourses.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -23,28 +20,51 @@ class HomeViewModel @Inject constructor(
 ) : ViewModel() {
     private val _uiState = MutableStateFlow(HomeUiState())
     val uiState = _uiState.asStateFlow()
-    var clickedIndex = -1
 
     private val _events = Channel<AppEvents>()
     val events = _events.receiveAsFlow()
 
     init {
         viewModelScope.launch {
-            _uiState.value = _uiState.value.copy(
-                homePopularCourses = repository.getHomePopularCourses()
-            )
-            _uiState.value = _uiState.value.copy(
-                categories = repository.getCategories()
-            )
+            repository.getHomePopularCourses().collect { response ->
+                when(response) {
+                    is Resource.Success -> {
+                        _uiState.value = _uiState.value.copy(
+                            homePopularCourses = response.data ?: emptyList()
+                        )
+                    }
+                    is Resource.Failure -> {
+                        _uiState.value = _uiState.value.copy(
+                            errorMessage = response.message ?: ""
+                        )
+                    }
+                    is Resource.Loading -> Unit
+                }
+            }
+            repository.getCategories().collect { response ->
+                when(response) {
+                    is Resource.Success -> {
+                        _uiState.value = _uiState.value.copy(
+                            categories = response.data ?: emptyList()
+                        )
+                    }
+                    is Resource.Failure -> {
+                        _uiState.value = _uiState.value.copy(
+                            errorMessage = response.message ?: ""
+                        )
+                    }
+                    is Resource.Loading -> Unit
+                }
+            }
         }
 
     }
 
-    fun onCourseClicked(courseId: String) {
+    fun onCourseClicked(course: Course) {
         viewModelScope.launch {
             _events.send(
                 AppEvents.Navigate(
-                    route = "course_details_screen/${courseId}"
+                    route = "course_details_screen/${course.courseId}"
                 )
             )
         }

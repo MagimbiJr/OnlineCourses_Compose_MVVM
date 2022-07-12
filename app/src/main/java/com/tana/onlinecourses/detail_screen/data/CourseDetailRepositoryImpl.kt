@@ -1,32 +1,32 @@
 package com.tana.onlinecourses.detail_screen.data
 
-import com.tana.onlinecourses.home.data.popularCourses
+import android.util.Log
 import com.tana.onlinecourses.model.Course
+import com.tana.onlinecourses.model.courses
+import com.tana.onlinecourses.utils.Resource
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import java.io.IOException
 
 class CourseDetailRepositoryImpl : CourseDetailsRepository {
 
-    override suspend fun courseDetails(id: String): Course? {
-        var course: Course? = null
-        delay(2000)
-        var courseId = ""
-        popularCourses.map { mappedCourse ->
-//            if (id == mappedCourse.courseId) {
-//                courseId = id
-//            }
-            course = Course(
-                courseId = id,
-                courseTitle = mappedCourse.courseTitle,
-                courseAuthor = mappedCourse.courseAuthor,
-                coursePrice = mappedCourse.coursePrice,
-                courseDuration = mappedCourse.courseDuration,
-                courseDescription = mappedCourse.courseDescription,
-                courseImage = mappedCourse.courseImage,
-                releaseDate = mappedCourse.releaseDate,
-                entryLevel = mappedCourse.entryLevel
-            )
+    override fun courseDetails(id: String): Flow<Resource<Course>> = flow {
+
+        try {
+            delay(1500)
+            emit(Resource.Loading())
+            val course = courses.find { it.courseId == id }
+            Log.d("TAG", "courseDetails: $course")
+            if (course != null) {
+                emit(Resource.Success(data = course))
+            }
+        } catch (e: Exception) {
+            emit(Resource.Failure(message = e.localizedMessage ?: "Something came up"))
+        } catch (e: IOException) {
+            emit(Resource.Failure(message = e.localizedMessage ?: "Something came up"))
         }
-        return course
+
     }
 
 }
