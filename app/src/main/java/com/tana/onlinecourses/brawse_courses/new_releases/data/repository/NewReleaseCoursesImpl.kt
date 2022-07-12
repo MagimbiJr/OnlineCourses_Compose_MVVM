@@ -1,7 +1,7 @@
 package com.tana.onlinecourses.brawse_courses.new_releases.data.repository
 
-import com.tana.onlinecourses.brawse_courses.new_releases.data.newReleases
 import com.tana.onlinecourses.model.Course
+import com.tana.onlinecourses.model.courses
 import com.tana.onlinecourses.utils.Resource
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -13,7 +13,8 @@ class NewReleaseCoursesImpl : NewReleaseRepository {
         try {
             delay(1500)
             emit(Resource.Loading())
-            emit(Resource.Success(data = newReleases))
+            val newReleaseCourses = courses
+            emit(Resource.Success(data = newReleaseCourses))
         } catch (e: Exception) {
             emit(Resource.Failure(message = e.localizedMessage ?: "Something came up"))
         } catch (e: IOException) {

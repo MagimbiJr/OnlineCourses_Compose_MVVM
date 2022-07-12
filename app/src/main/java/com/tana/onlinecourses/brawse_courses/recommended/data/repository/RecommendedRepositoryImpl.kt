@@ -1,8 +1,7 @@
 package com.tana.onlinecourses.brawse_courses.recommended.data.repository
 
-import com.tana.onlinecourses.brawse_courses.new_releases.data.newReleases
-import com.tana.onlinecourses.brawse_courses.recommended.data.recommendedCourses
 import com.tana.onlinecourses.model.Course
+import com.tana.onlinecourses.model.courses
 import com.tana.onlinecourses.utils.Resource
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -14,6 +13,7 @@ class RecommendedRepositoryImpl : RecommendedRepository {
         try {
             delay(1500)
             emit(Resource.Loading())
+            val recommendedCourses = courses.take(5)
             emit(Resource.Success(data = recommendedCourses))
         } catch (e: Exception) {
             emit(Resource.Failure(message = e.localizedMessage ?: "Something came up"))

@@ -70,7 +70,7 @@ fun AppNAvHost(
                 )
             }
             composable(BottomNavRoutes.Search.route) {}
-            composable(route = "course_details_screen/{id}") {
+            composable(route = "course_details_screen/{courseId}") {
                 CourseDetailScreen(
                     onNavigateBack = { navHostController.popBackStack() },
                     scaffoldState = scaffoldState

@@ -2,9 +2,9 @@ package com.tana.onlinecourses.home.data.repository
 
 
 import com.tana.onlinecourses.home.data.categories
-import com.tana.onlinecourses.home.data.popularCourses
 import com.tana.onlinecourses.model.Category
 import com.tana.onlinecourses.model.Course
+import com.tana.onlinecourses.model.courses
 import com.tana.onlinecourses.utils.Resource
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
@@ -16,7 +16,8 @@ class HomeRepositoryImpl : HomeRepository {
         try {
             delay(1500)
             emit(Resource.Loading())
-            emit(Resource.Success(data = popularCourses))
+            val courses = courses.take(5)
+            emit(Resource.Success(data = courses))
         } catch (e: Exception) {
             emit(Resource.Failure(message = e.localizedMessage ?: "Something came up"))
         } catch (e: IOException) {

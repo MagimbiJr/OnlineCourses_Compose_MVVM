@@ -27,8 +27,8 @@ class CourseDetailViewModel @Inject constructor(
 
 
     init {
-        savedStateHandle.get<String>(Constants.PARAM_COURSE_ID)?.let { id ->
-            courseDetails(id = id)
+        savedStateHandle.get<String>(Constants.PARAM_COURSE_ID)?.let { courseId ->
+            courseDetails(id = courseId)
         }
     }
 
