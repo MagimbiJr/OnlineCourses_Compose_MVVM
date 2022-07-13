@@ -1,8 +1,8 @@
 package com.tana.onlinecourses.home.ui.components
 
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.animation.*
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -74,17 +74,21 @@ fun HomeInfoCard(
                     .padding(start = 12.dp, end = 12.dp, bottom = 16.dp)
                     .align(Alignment.BottomStart)
             ) {
-                if (isToggled) {
-                    AnimatedVisibility(
-                        visible = isToggled,
-                    ) {
-                        Text(
-                            text = "Sint incididunt voluptate fugiat et elit pariatur dolore. Enim officia " +
-                                    "esse incididunt nisi voluptate officia esse est fugiat cupidatat tempor. " +
-                                    "Quis nisi mollit duis proident non in sit",
-                            color = Color.White
-                        )
-                    }
+                AnimatedVisibility(
+                    visible = isToggled,
+                    enter = slideInVertically(
+                        animationSpec = tween(durationMillis = 1000, easing = FastOutSlowInEasing)
+                    ) + fadeIn(),
+                    exit = slideOutVertically(
+                        animationSpec = tween(durationMillis = 1000, easing = FastOutSlowInEasing)
+                    ) + fadeOut()
+                ) {
+                    Text(
+                        text = "Sint incididunt voluptate fugiat et elit pariatur dolore. Enim officia " +
+                                "esse incididunt nisi voluptate officia esse est fugiat cupidatat tempor. " +
+                                "Quis nisi mollit duis proident non in sit",
+                        color = Color.White
+                    )
                 }
                 Spacer(modifier = modifier.height(6.dp))
                 Text(
